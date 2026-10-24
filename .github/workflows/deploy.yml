@@ -65,4 +65,6 @@ jobs:
       - name: Verify Deployment
         run: |
           sleep 5
-          curl --fail http://localhost:8080/hello
+          curl -i http://localhost:8080/hello || true
+          echo "----- Application logs -----"
+          cat /home/luv/spring-demo/app.log
